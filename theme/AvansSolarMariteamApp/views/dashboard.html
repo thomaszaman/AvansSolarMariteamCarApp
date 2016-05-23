@@ -1,0 +1,327 @@
+<!-- BEGIN PAGE HEADER-->
+<h3 class="page-title"> Dashboard </h3>
+<!-- END PAGE HEADER-->
+<!-- BEGIN MAIN CONTENT -->
+<div ng-controller="DashboardController">
+
+    <!-- BEGIN DASHBOARD STATS -->
+    <div class="row">
+        <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
+            <div class="dashboard-stat2 ">
+                <div class="display">
+                    <div class="number">
+                        <h3 class="font-red-mint">
+                            <span data-counter="counterup" >{{ test }}</span>
+                            <small class="font-red-mint">RPM</small>
+                        </h3>
+                        <small>REVOLUTIONS</small>
+                    </div>
+                    <div class="icon">
+                        <i class="icon-speedometer"></i>
+                    </div>
+                </div>
+                <div class="progress-info">
+                    <div class="progress">
+                        <span style="width: 76%;" class="progress-bar progress-bar-success red-mint">
+                            <span class="sr-only">76% progress</span>
+                        </span>
+                    </div>
+                    <div class="status">
+                        <div class="status-title"> progress </div>
+                        <div class="status-number"> 76% </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
+            <div class="dashboard-stat2 ">
+                <div class="display">
+                    <div class="number">
+                        <h3 class="font-red-mint">
+                            <span data-counter="counterup">{{ bms.amp }}</span>
+                            <small class="font-red-mint">W</small>
+                        </h3>
+                        <small>POWER</small>
+                    </div>
+                    <div class="icon">
+                        <i class="icon-energy"></i>
+                    </div>
+                </div>
+                <div class="progress-info">
+                    <div class="progress">
+                        <span style="width: 85%;" class="progress-bar progress-bar-success red-mint">
+                            <span class="sr-only">85% change</span>
+                        </span>
+                    </div>
+                    <div class="status">
+                        <div class="status-title"> change </div>
+                        <div class="status-number"> 85% </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
+            <div class="dashboard-stat2 ">
+                <div class="display">
+                    <div class="number">
+                        <h3 class="font-red-mint">
+                            <span data-counter="counterup">{{ bms.volt }}</span>
+                            <small class="font-red-mint">V</small>
+                        </h3>
+                        <small>BATTERY</small>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-battery-half"></i>
+                    </div>
+                </div>
+                <div class="progress-info">
+                    <div class="progress">
+                        <span style="width: {{ bms.percent }}%;" class="progress-bar progress-bar-success red-mint">
+                        </span>
+                    </div>
+                    <div class="status">
+                        <div class="status-title"> batterylife </div>
+                        <div class="status-number"> {{ bms.percent }}% </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
+            <div class="dashboard-stat2 ">
+                <div class="display">
+                    <div class="number">
+                        <h3 class="font-red-mint">
+                            <span data-counter="counterup">{{ mpptvolt }}</span>
+                            <small class="font-red-mint">V</small>
+                        </h3>
+                        <small>SOLARPANELS</small>
+
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-sun-o"></i>
+                    </div>
+                </div>
+                <div class="progress-info">
+                    <div class="progress">
+                        <span style="width: 45%;" class="progress-bar progress-bar-success red-mint">
+                            <span class="sr-only">45% grow</span>
+                        </span>
+                    </div>
+                    <div class="status">
+                        <div class="status-title"> grow </div>
+                        <div class="status-number"> 45% </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
+            <div class="dashboard-stat2 ">
+                <div class="display">
+                    <div class="number">
+                        <h3 class="font-red-mint">
+                            <span data-counter="counterup">0</span>
+                            <small class="font-red-mint">°C</small>
+                        </h3>
+                        <small>TEMPERATURE</small>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-warning"></i>
+                    </div>
+                </div>
+                <div class="progress-info">
+                    <div class="progress">
+                        <span style="width: 45%;" class="progress-bar progress-bar-success red-mint">
+                            <span class="sr-only">45% grow</span>
+                        </span>
+                    </div>
+                    <div class="status">
+                        <div class="status-title"> grow </div>
+                        <div class="status-number"> 45% </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
+            <div class="dashboard-stat2 ">
+                <div class="display">
+                    <div class="number">
+                        <h3 class="font-red-mint">
+                            <span data-counter="counterup">{{ gps.speed }}</span>
+                            <small class="font-red-mint">KM/H</small>
+                        </h3>
+                        <small>SPEED</small>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-tachometer"></i>
+                    </div>
+                </div>
+                <div class="progress-info">
+                    <div class="progress">
+                        <span style="width: 57%;" class="progress-bar progress-bar-success red-mint">
+                            <span class="sr-only">56% change</span>
+                        </span>
+                    </div>
+                    <div class="status">
+                        <div class="status-title"> change </div>
+                        <div class="status-number"> 57% </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END DASHBOARD STATS -->
+    <div class="row">
+        <div class="col-md-6 col-sm-12">
+            <!-- BEGIN PORTLET-->
+            <div class="portlet light bordered ">
+                <div class="portlet-title">
+                    <div class="caption caption-md">
+                        <span class="caption-subject font-red-mint bold uppercase">Summary Graph</span>
+                        <span class="caption-helper hide">weekly stats...</span>
+                    </div>
+                    <div class="actions">
+                        <div class="btn-group btn-group-devided" data-toggle="buttons">
+                            <label class="btn dark btn-outline btn-circle btn-sm active">
+                                <input type="radio" name="options" class="toggle" id="option1">Today</label>
+                            <label class="btn dark btn-outline btn-circle btn-sm">
+                                <input type="radio" name="options" class="toggle" id="option2">Week</label>
+                            <label class="btn dark btn-outline btn-circle btn-sm">
+                                <input type="radio" name="options" class="toggle" id="option2">Month</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="row list-separated">
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <div class="font-grey-mint font-sm"> Total Sales </div>
+                            <div class="uppercase font-hg font-red-flamingo"> 13760
+                                <span class="font-lg font-grey-mint">$</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <div class="font-grey-mint font-sm"> Revenue </div>
+                            <div class="uppercase font-hg font-green"> 4760
+                                <span class="font-lg font-grey-mint">$</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <div class="font-grey-mint font-sm"> Expenses </div>
+                            <div class="uppercase font-hg font-purple"> 1760
+                                <span class="font-lg font-grey-mint">$</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <div class="font-grey-mint font-sm"> Growth </div>
+                            <div class="uppercase font-hg font-blue"> 9760
+                                <span class="font-lg font-grey-mint">$</span>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="list-separated list-inline-xs hide">
+                        <li>
+                            <div class="font-grey-mint font-sm"> Total Sales </div>
+                            <div class="uppercase font-hg font-red-flamingo"> 13760
+                                <span class="font-lg font-grey-mint">$</span>
+                            </div>
+                        </li>
+                        <li> </li>
+                        <li class="border">
+                            <div class="font-grey-mint font-sm"> Revenue </div>
+                            <div class="uppercase font-hg font-green"> 4760
+                                <span class="font-lg font-grey-mint">$</span>
+                            </div>
+                        </li>
+                        <li class="divider"> </li>
+                        <li>
+                            <div class="font-grey-mint font-sm"> Expenses </div>
+                            <div class="uppercase font-hg font-purple"> 1760
+                                <span class="font-lg font-grey-mint">$</span>
+                            </div>
+                        </li>
+                        <li class="divider"> </li>
+                        <li>
+                            <div class="font-grey-mint font-sm"> Growth </div>
+                            <div class="uppercase font-hg font-blue"> 9760
+                                <span class="font-lg font-grey-mint">$</span>
+                            </div>
+                        </li>
+                    </ul>
+                    <div id="sales_statistics" class="portlet-body-morris-fit morris-chart" style="height: 260px"> </div>
+                </div>
+            </div>
+            <!-- END PORTLET-->
+        </div>
+        <div class="col-md-6 col-sm-12">
+          
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <div class="portlet light bordered ">
+              <div class="portlet-title">
+                  <div class="caption caption-md">
+                      <span class="caption-subject font-red-mint bold uppercase">Messages</span>
+                  </div>
+              </div>
+              <div class="portlet-body">
+                                                      <!-- TASK COMMENTS -->
+                                                      <div class="form-group">
+                                                              <ul class="media-list">
+                                                                  <li class="media">
+                                                                      <div class="media-body todo-comment">
+                                                                          <p class="todo-comment-head">
+                                                                              <span class="todo-comment-username bold">Christina Aguilera</span> &nbsp;
+                                                                              <span class="todo-comment-date bold">17 Sep 2014 at 2:05pm</span>
+                                                                          </p>
+                                                                          <p class="todo-text-color"> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. </p>
+                                                                        </div>
+                                                                  </li>
+                                                                  <li class="media">
+                                                                      <div class="media-body todo-comment">
+                                                                          <p class="todo-comment-head">
+                                                                              <span class="todo-comment-username bold">Andres Iniesta</span> &nbsp;
+                                                                              <span class="todo-comment-date bold">18 Sep 2014 at 9:22am</span>
+                                                                          </p>
+                                                                          <p class="todo-text-color"> Cras sit amet nibh libero, in gravida nulla. Scelerisque ante sollicitudin commodo Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate
+                                                                              at, tempus viverra turpis.
+                                                                              <br> </p>
+                                                                      </div>
+                                                                  </li>
+                                                                  <li class="media">
+                                                                      <div class="media-body todo-comment">
+                                                                          <p class="todo-comment-head">
+                                                                              <span class="todo-comment-username bold">Olivia Wilde</span> &nbsp;
+                                                                              <span class="todo-comment-date bold">18 Sep 2014 at 11:50am</span>
+                                                                          </p>
+                                                                          <p class="todo-text-color"> Cras sit amet nibh libero, in gravida nulla. Scelerisque ante sollicitudin commodo Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate
+                                                                              at, tempus viverra turpis.
+                                                                              <br> </p>
+                                                                      </div>
+                                                                  </li>
+                                                              </ul>
+                                                      </div>
+                                                      <!-- END TASK COMMENTS -->
+                                                      <!-- TASK COMMENT FORM -->
+                                                      <div class="form-group">
+                                                              <ul class="media-list">
+                                                                  <li class="media">
+                                                                      <div class="media-body">
+                                                                          <textarea class="form-control todo-taskbody-taskdesc" rows="4" placeholder="Type comment..."></textarea>
+                                                                      </div>
+                                                                  </li>
+                                                              </ul>
+                                                              <button type="button" class="pull-right btn btn-sm btn-circle red-mint"> &nbsp; Send &nbsp; </button>
+
+                                                      </div>
+                                                      <!-- END TASK COMMENT FORM -->
+                                            </div>
+                                          </div>
+        </div>
+        </div>
+    </div>
+<!-- END MAIN CONTENT -->
+<!-- BEGIN MAIN JS & CSS -->
+<script>
+    Dashboard.init();
+</script>
+<!-- BEGIN MAIN JS & CSS -->
